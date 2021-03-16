@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Katharina Albers, 2020
+# Katharina Lindenlaub, 2020
 # Joop Laan <joop@interconnecting.systems>, 2020
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,10 +16,10 @@ msgstr ""
 "PO-Revision-Date: 2020-11-12 13:23+0000\n"
 "Last-Translator: Joop Laan <joop@interconnecting.systems>, 2020\n"
 "Language-Team: Dutch (https://www.transifex.com/liqd/teams/109316/nl/)\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: adhocracy4/ckeditor/static/ckeditor_collapsible/plugin.js:12
@@ -70,9 +70,9 @@ msgid ""
 "moderation. The moderation will look at the reported content. The content "
 "will be deleted if it does not meet our discussion rules (netiquette)."
 msgstr ""
-"U wilt deze inhoud rapporteren? Uw bericht wordt naar de moderator gestuurd. "
-"De moderator zal kijken naar de gerapporteerde inhoud. De inhoud zal worden "
-"verwijderd als deze niet voldoet aan onze discussieregels (netiquette)."
+"U wilt deze inhoud rapporteren? Uw bericht wordt naar de moderator gestuurd."
+" De moderator zal kijken naar de gerapporteerde inhoud. De inhoud zal worden"
+" verwijderd als deze niet voldoet aan onze discussieregels (netiquette)."
 
 #: adhocracy4/comments/static/comments/Comment.jsx:96
 #: adhocracy4/comments_async/static/comments_async/comment.jsx:260
@@ -98,7 +98,8 @@ msgstr "Wilt u deze opmerking echt verwijderen?"
 #: apps/documents/assets/ChapterNavItem.jsx:61
 #: apps/documents/assets/ParagraphForm.jsx:133
 #: apps/documents/assets/ParagraphForm.jsx:138
-#: apps/polls/assets/QuestionForm.jsx:99 apps/polls/assets/QuestionForm.jsx:104
+#: apps/polls/assets/QuestionForm.jsx:99
+#: apps/polls/assets/QuestionForm.jsx:104
 msgid "Delete"
 msgstr "Verwijderen"
 
@@ -473,10 +474,9 @@ msgstr "Keuze"
 msgid "Thank you! We are taking care of it."
 msgstr "Dank u wel! We zorgen ervoor."
 
-#: adhocracy4/static/Alert.jsx:5
-#: apps/contrib/assets/Alert.jsx:10 apps/contrib/assets/Alert.jsx:11
-#: apps/dashboard/assets/ajax_modal.js:12 apps/embed/assets/embed.js:57
-#: apps/embed/assets/embed.js:58
+#: adhocracy4/static/Alert.jsx:5 apps/contrib/assets/Alert.jsx:10
+#: apps/contrib/assets/Alert.jsx:11 apps/dashboard/assets/ajax_modal.js:12
+#: apps/embed/assets/embed.js:57 apps/embed/assets/embed.js:58
 #: apps/maps/assets/map_choose_polygon_with_preset.js:84
 msgid "Close"
 msgstr "Sluiten"
@@ -777,8 +777,8 @@ msgid ""
 msgstr ""
 "Hier vindt u een video van Google (YouTube). Om uw privacy te beschermen "
 "wordt de inhoud pas geladen nadat u daarvoor toestemming heeft gegeven. "
-"Alleen dan stelt YouTube cookies in die informatie over het gebruikersgedrag "
-"verzamelen."
+"Alleen dan stelt YouTube cookies in die informatie over het gebruikersgedrag"
+" verzamelen."
 
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:15
 msgid "More information can be found in the privacy policy of Google under: "
@@ -797,8 +797,8 @@ msgstr "Video afspelen"
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:19
 msgid ""
 "Here you can find a video from Vimeo. To protect your data the content will "
-"only be loaded after you give your consent. Only then will Vimeo set Cookies "
-"that collect information on user behaviour."
+"only be loaded after you give your consent. Only then will Vimeo set Cookies"
+" that collect information on user behaviour."
 msgstr ""
 "Hier vindt u een video van Vimeo. Om uw privacy te beschermen wordt de "
 "inhoud pas geladen nadat u daarvoor toestemming heeft gegeven. Alleen dan "

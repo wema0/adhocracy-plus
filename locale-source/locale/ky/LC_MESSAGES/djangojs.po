@@ -2,10 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Кубанычбек Айдаркулов <sleng84@mail.ru>, 2021
-#
+# Sebastian Hess <sebastian.hess@giz.de>, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -13,12 +14,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 17:44+0100\n"
 "PO-Revision-Date: 2020-11-12 13:23+0000\n"
-"Last-Translator: Кубанычбек Айдаркулов <sleng84@mail.ru>, 2021\n"
+"Last-Translator: Sebastian Hess <sebastian.hess@giz.de>, 2021\n"
 "Language-Team: Kyrgyz (https://www.transifex.com/liqd/teams/109316/ky/)\n"
-"Language: ky\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ky\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: adhocracy4/ckeditor/static/ckeditor_collapsible/plugin.js:12
@@ -95,7 +96,8 @@ msgstr "Бул пикирди чындыгында эле өчүрүүнү ка�
 #: apps/documents/assets/ChapterNavItem.jsx:61
 #: apps/documents/assets/ParagraphForm.jsx:133
 #: apps/documents/assets/ParagraphForm.jsx:138
-#: apps/polls/assets/QuestionForm.jsx:99 apps/polls/assets/QuestionForm.jsx:104
+#: apps/polls/assets/QuestionForm.jsx:99
+#: apps/polls/assets/QuestionForm.jsx:104
 msgid "Delete"
 msgstr "Өчүрүү"
 
@@ -105,7 +107,7 @@ msgstr "Өчүрүү"
 #: adhocracy4/comments_async/static/modals/moderate_modal.jsx:54
 #: adhocracy4/static/Modal.jsx:59
 msgid "Abort"
-msgstr "тууралуу"
+msgstr "жокко чыгаруу"
 
 #: adhocracy4/comments/static/comments/CommentBox.jsx:165
 #: adhocracy4/comments/static/comments/CommentEditForm.jsx:34
@@ -143,7 +145,7 @@ msgstr "Сураныч, пикир калтыруу үчүн кириңиз"
 #: adhocracy4/comments/static/comments/CommentForm.jsx:39
 #: adhocracy4/comments_async/static/comments_async/comment_form.jsx:129
 msgid "The currently active phase doesn't allow to comment."
-msgstr "Учурдагы активдүү баскыч пикир калтырууга жол бербейт"
+msgstr "Учурдагы активдүү фаза пикир калтырууга жол бербейт"
 
 #: adhocracy4/comments/static/comments/CommentForm.jsx:40
 #: adhocracy4/comments_async/static/comments_async/comment_form.jsx:123
@@ -238,7 +240,7 @@ msgstr "Баардыгы"
 #: adhocracy4/comments_async/static/comments_async/comment_edit_form.jsx:44
 #: adhocracy4/comments_async/static/comments_async/comment_form.jsx:96
 msgid "Write contribution"
-msgstr "Салым жазуу"
+msgstr "Салымды  жазуу"
 
 #: adhocracy4/comments_async/static/comments_async/comment_box.jsx:522
 #: adhocracy4/comments_async/static/comments_async/comment_box.jsx:526
@@ -320,7 +322,7 @@ msgstr "Сиздин билдирүү"
 #: adhocracy4/comments_async/static/modals/report_modal.jsx:84
 #: adhocracy4/reports/static/reports/ReportModal.jsx:62
 msgid "Send Report"
-msgstr "Нааразычылык билдирүү"
+msgstr "Отчетту жөнөтүү "
 
 #: adhocracy4/comments_async/static/modals/url_modal.jsx:23
 msgid "Copy"
@@ -465,10 +467,9 @@ msgstr "Тандоо"
 msgid "Thank you! We are taking care of it."
 msgstr "Ыракмат! Биз мунун үстүндө иштейбиз,"
 
-#: adhocracy4/static/Alert.jsx:5
-#: apps/contrib/assets/Alert.jsx:10 apps/contrib/assets/Alert.jsx:11
-#: apps/dashboard/assets/ajax_modal.js:12 apps/embed/assets/embed.js:57
-#: apps/embed/assets/embed.js:58
+#: adhocracy4/static/Alert.jsx:5 apps/contrib/assets/Alert.jsx:10
+#: apps/contrib/assets/Alert.jsx:11 apps/dashboard/assets/ajax_modal.js:12
+#: apps/embed/assets/embed.js:57 apps/embed/assets/embed.js:58
 #: apps/maps/assets/map_choose_polygon_with_preset.js:84
 msgid "Close"
 msgstr "Жабуу"
@@ -705,8 +706,8 @@ msgstr "Көп бурчтукту файлды жүктөө аркылуу им�
 msgid ""
 "Upload a polygon from a GeoJSON (.geojson) or a zipped Shapefile (.zip)."
 msgstr ""
-"GeoJSON көп бурчтугун (.geojson) же  (.zip) формасындагы архивге киргизилген "
-"файлды жүктөп алыңыз."
+"GeoJSON көп бурчтугун (.geojson) же  (.zip) формасындагы архивге киргизилген"
+" файлды жүктөп алыңыз."
 
 #: apps/maps/assets/map_choose_polygon_with_preset.js:92
 msgid ""
@@ -754,8 +755,8 @@ msgstr ""
 #: adhocracy-plus/assets/js/unload_warning.js:15
 msgid "If you leave this page changes you made will not be saved."
 msgstr ""
-"Эгерде Сиз бул баракчадан чыксаңыз, анда киргизилген өзгөртүлөөрдүн баардыгы "
-"өчүрүлөт"
+"Эгерде Сиз бул баракчадан чыксаңыз, анда киргизилген өзгөртүлөөрдүн баардыгы"
+" өчүрүлөт"
 
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:13
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:18
@@ -771,7 +772,7 @@ msgstr ""
 "Мында Сиз Google (YouTube) дан видеолорду тапсаңыз болот. Сиздин "
 "маалыматтарыңызды коргоо үчүн контент Сиз макулдугуңузду бергенден кийин "
 "гана жүктөлөт. Ошондон кийин гана YouTube  колдонуучунун режимдери тууралуу "
-"маалыматтарды чогулта турган Cookie файлдарын орнотот. "
+"маалыматтарды чогулта турган Cookie файлдарын жүктөйт. "
 
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:15
 msgid "More information can be found in the privacy policy of Google under: "
@@ -792,13 +793,13 @@ msgstr "Видеону ачуу"
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:19
 msgid ""
 "Here you can find a video from Vimeo. To protect your data the content will "
-"only be loaded after you give your consent. Only then will Vimeo set Cookies "
-"that collect information on user behaviour."
+"only be loaded after you give your consent. Only then will Vimeo set Cookies"
+" that collect information on user behaviour."
 msgstr ""
 "Мында Сиз Vimeo дан видеолорду тапсаңыз болот. Сиздин маалыматтарды коргоо "
 "үчүн контент Сиз макулдук бергенден кийин гана жүктөлөт. Ушундан кийин гана "
-"Vimeo колдонуучулардын режими тууралуу маалыматты чогулткан Cookie файлдарын "
-"орнотот. "
+"Vimeo колдонуучулардын режими тууралуу маалыматты чогулткан Cookie файлдарын"
+" орнотот. "
 
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:20
 msgid "More information can be found in the privacy policy of Vimeo under: "

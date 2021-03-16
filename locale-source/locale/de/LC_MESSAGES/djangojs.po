@@ -2,11 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
-# Katharina Albers, 2020
+# Katharina Lindenlaub, 2020
 # Katharina Schmid, 2020
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -16,10 +16,10 @@ msgstr ""
 "PO-Revision-Date: 2020-11-12 13:23+0000\n"
 "Last-Translator: Katharina Schmid, 2020\n"
 "Language-Team: German (https://www.transifex.com/liqd/teams/109316/de/)\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: adhocracy4/ckeditor/static/ckeditor_collapsible/plugin.js:12
@@ -98,7 +98,8 @@ msgstr "Möchten Sie diesen Kommentar wirklich löschen?"
 #: apps/documents/assets/ChapterNavItem.jsx:61
 #: apps/documents/assets/ParagraphForm.jsx:133
 #: apps/documents/assets/ParagraphForm.jsx:138
-#: apps/polls/assets/QuestionForm.jsx:99 apps/polls/assets/QuestionForm.jsx:104
+#: apps/polls/assets/QuestionForm.jsx:99
+#: apps/polls/assets/QuestionForm.jsx:104
 msgid "Delete"
 msgstr "Löschen"
 
@@ -473,10 +474,9 @@ msgstr "Auswahl"
 msgid "Thank you! We are taking care of it."
 msgstr "Dankeschön! Wir werden uns darum kümmern."
 
-#: adhocracy4/static/Alert.jsx:5
-#: apps/contrib/assets/Alert.jsx:10 apps/contrib/assets/Alert.jsx:11
-#: apps/dashboard/assets/ajax_modal.js:12 apps/embed/assets/embed.js:57
-#: apps/embed/assets/embed.js:58
+#: adhocracy4/static/Alert.jsx:5 apps/contrib/assets/Alert.jsx:10
+#: apps/contrib/assets/Alert.jsx:11 apps/dashboard/assets/ajax_modal.js:12
+#: apps/embed/assets/embed.js:57 apps/embed/assets/embed.js:58
 #: apps/maps/assets/map_choose_polygon_with_preset.js:84
 msgid "Close"
 msgstr "Schließen"
@@ -634,7 +634,8 @@ msgstr "Frage als beantwortet markieren"
 #: apps/interactiveevents/assets/js/a4_candy_interactive_events/livequestion_info_box.jsx:8
 msgid "is shown in front of a question? It has been marked by the moderation."
 msgstr ""
-"wird vor einer Frage angezeigt? Dann wurde sie von der Moderation vorgemerkt."
+"wird vor einer Frage angezeigt? Dann wurde sie von der Moderation "
+"vorgemerkt."
 
 #: apps/interactiveevents/assets/js/a4_candy_interactive_events/livequestion_info_box.jsx:9
 msgid "Close information"
@@ -803,8 +804,8 @@ msgstr "Video abspielen"
 #: dsgvo-video-embed/js/dsgvo-video-embed.js:19
 msgid ""
 "Here you can find a video from Vimeo. To protect your data the content will "
-"only be loaded after you give your consent. Only then will Vimeo set Cookies "
-"that collect information on user behaviour."
+"only be loaded after you give your consent. Only then will Vimeo set Cookies"
+" that collect information on user behaviour."
 msgstr ""
 "Hier befindet sich ein Video von dem Anbieter Vimeo. Um Ihre Daten zu "
 "schützen, laden wir dieses Video nur mit Ihrer Zustimmung. Erst dann werden "

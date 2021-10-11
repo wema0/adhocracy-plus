@@ -34,6 +34,10 @@
         top: $spacer;
         right: $spacer;
         transition: transform 0.3s;
+
+        &.dashboard-nav-i-spacer {
+            right: 1.5*$spacer;
+        }
     }
 
     &.collapsed i.fa-chevron-up {
@@ -59,10 +63,25 @@
 }
 
 .dashboard-nav__module-dropdown {
+    min-width: 1.5*$spacer;
+    text-align: center;
     position: absolute !important;
     z-index: 5 !important;
     right: 0;
     top: 0.25*$spacer;
+}
+
+//to ensure the switch is always toggled on button click
+.dashboard-nav__form--project {
+    position: relative;
+
+    .btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 }
 
 .dashboard-nav__pages {
@@ -93,13 +112,17 @@
     height: 3*$spacer;
 }
 
+.dashboard-nav__toggle-label {
+    text-align: left;
+}
+
 .dashboard-nav__toggle-label:before {
     height: 1.25*$spacer !important;
     width: 2*$spacer !important;
     border-radius: $spacer !important;
 }
 
-.custom-control-input:checked ~ .dashboard-nav__toggle-label:before {
+.form-check-input:checked ~ .dashboard-nav__toggle-label:before {
     border-color: $brand-primary !important;
     background-color: $brand-primary !important;
 }

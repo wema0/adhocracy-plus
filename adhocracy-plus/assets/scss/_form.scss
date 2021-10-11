@@ -21,9 +21,9 @@ input {
     max-width: 100%;
     background-color: $body-bg;
     color: contrast-color($body-bg);
-    box-shadow: 0 0 2px $brand-primary-tint inset;
+    box-shadow: 0 0 1px $brand-primary-tint inset;
     border-radius: 0;
-    border-width: 2px;
+    border-width: 1px;
 
     &:invalid {
         color: contrast-color($body-bg);
@@ -47,9 +47,13 @@ input {
 input[type="checkbox"],
 input[type="radio"] {
     padding: 0;
-    border: 0;
     box-shadow: none;
-    max-width: 13px;
+}
+
+.form-switch {
+    .form-check-input {
+        height: 1.25*$spacer;
+    }
 }
 
 div.cke_focus {
@@ -70,10 +74,12 @@ div.cke_focus {
     margin-bottom: $spacer;
 }
 
+.form-check {
+    padding-left: 0;
+}
+
 .form-check,
 .form-group {
-    margin: 0 0 $spacer;
-
     .django-ckeditor-widget,
     %input-base {
         width: 100%;
@@ -103,7 +109,6 @@ div.cke_focus {
     input {
         display: inline;
         width: auto;
-        margin-left: -1.25em;
     }
 }
 
@@ -118,8 +123,6 @@ div.cke_focus {
 .widget--checkboxselectmultiple {
     ul {
         list-style: none;
-        margin: 0;
-        padding: 0;
     }
 
     label {
@@ -130,7 +133,8 @@ div.cke_focus {
 .form-control {
     height: auto !important;
     border-radius: 0 !important;
-    border-width: 2px;
+    line-height: 1.6; //ensures input same height as grouped button
+    margin-bottom: 0;
 
     &:focus {
         box-shadow: none;
@@ -163,5 +167,13 @@ div.cke_focus {
     &:focus {
         outline: none;
         box-shadow: none;
+    }
+}
+
+.filter-bar {
+    margin-bottom: 0.5*$spacer;
+
+    @media screen and (min-width: $breakpoint) {
+        display: flex;
     }
 }

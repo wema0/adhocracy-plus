@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     'adhocracy4.comments',
     'adhocracy4.comments_async',
     'adhocracy4.dashboard',
+    'adhocracy4.exports',
     'adhocracy4.filters',
     'adhocracy4.follows',
     'adhocracy4.forms',
@@ -82,6 +83,7 @@ INSTALLED_APPS = (
     'adhocracy4.modules',
     'adhocracy4.organisations',
     'adhocracy4.phases',
+    'adhocracy4.polls',
     'adhocracy4.projects',
     'adhocracy4.ratings',
     'adhocracy4.reports',
@@ -444,12 +446,12 @@ A4_RATEABLES = (
 
 A4_COMMENTABLES = (
     ('a4comments', 'comment'),
+    ('a4polls', 'poll'),
     ('a4_candy_ideas', 'idea'),
     ('a4_candy_documents', 'chapter'),
     ('a4_candy_documents', 'paragraph'),
     ('a4_candy_mapideas', 'mapidea'),
     ('a4_candy_budgeting', 'proposal'),
-    ('a4_candy_polls', 'poll'),
     ('a4_candy_topicprio', 'topic'),
     ('a4_candy_debate', 'subject')
 )
@@ -476,10 +478,10 @@ A4_ACTIONABLES = (
 
 A4_AUTO_FOLLOWABLES = (
     ('a4comments', 'comment'),
+    ('a4polls', 'vote'),
     ('a4_candy_ideas', 'idea'),
     ('a4_candy_mapideas', 'mapidea'),
     ('a4_candy_budgeting', 'proposal'),
-    ('a4_candy_polls', 'vote'),
 )
 
 A4_CATEGORIZABLE = (

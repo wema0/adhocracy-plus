@@ -34,12 +34,13 @@
 
 {% block extra_messages %}
 <div class="u-bg-light py-5">
-    <div class="container px-0 px-sm-3 u-bg-light">
+    <div class="container">
         <div class="col-12 container--shadow">
             {{ block.super }}
 
             {% if project.is_draft %}
                 <div class="row">
+                  <div class="col">
                     <ul class="messages">
                         <li class="alert alert--warning" role="alert">
                             <div class="container">
@@ -47,71 +48,71 @@
                             </div>
                         </li>
                     </ul>
+                    </div>
                 </div>
             {% endif %}
         {% endblock %}
 
         {% block content %}
-            <div class="project-header{% if project.image %} project-header--image{% endif %} row" style="{% if view.project.image %}
+            <div class="project-header{% if project.image %} project-header--image{% endif %}" style="{% if view.project.image %}
                            background-image: url({{ project.image |thumbnail_url:'heroimage' }});
                            {% endif %}">
-                <div class="container">
-                    <div class="row mb-5">
-                        <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3">
-                            <h1 class="project-header__title">{{ project.name }}</h1>
-                            <p class="project-header__description">{{ project.description }}</p>
-                            {% if request.user.is_authenticated %}
-                                {% react_follows project %}
-                            {% endif %}
-                        </div>
+                <div class="mb-5 u-z-index--0">
+                    <div class="col-md-8 col-lg-6 offset-md-2 offset-lg-3">
+                        <h1 class="project-header__title">{{ project.name }}</h1>
+                        <p class="project-header__description">{{ project.description }}</p>
+                        {% if request.user.is_authenticated %}
+                            {% react_follows project %}
+                        {% endif %}
                     </div>
                 </div>
                 {% if project.image_copyright %}
                 <div class="header__copyright copyright">© {{ project.image_copyright }}</div>
                 {% endif %}
-                <div class="tablist project-header__tabs row">
-                    <nav class="nav d-none d-md-inline-block" role="tablist">
-                        <a
-                            id="tab-project-{{ project.pk }}-information"
-                            class="tab"
-                            data-toggle="tab"
-                            href="#tabpanel-project-{{ project.pk }}-information"
-                            role="tab"
-                            aria-controls="tabpanel-project-{{ project.pk }}-information"
-                            aria-expanded="false">
-                            {% trans 'Information' %}
-                        </a>
-                        <a
-                            id="tab-project-{{ project.pk }}-participation"
-                            class="tab active"
-                            data-toggle="tab"
-                            href="#tabpanel-project-{{ project.pk }}-participation"
-                            role="tab"
-                            aria-controls="tabpanel-project-{{ project.pk }}-participation"
-                            aria-expanded="true">
-                            {% trans 'Participation' %}
-                        </a>
-                        <a
-                            id="tab-project-{{ project.pk }}-result"
-                            class="tab"
-                            data-toggle="tab"
-                            href="#tabpanel-project-{{ project.pk }}-result"
-                            role="tab"
-                            aria-controls="tabpanel-project-{{ project.pk }}-result"
-                            aria-expanded="false">
-                            {% trans 'Result' %}
-                        </a>
-                    </nav>
-                    {% include 'includes/project_header_mobile_toggle.html' %}
-                </div>
+                  <div class="tablist project-header__tabs">
+                      <nav class="nav d-none d-md-inline-block" role="tablist">
+                          <a
+                              id="tab-project-{{ project.pk }}-information"
+                              class="tab"
+                              data-bs-toggle="tab"
+                              href="#tabpanel-project-{{ project.pk }}-information"
+                              role="tab"
+                              aria-controls="tabpanel-project-{{ project.pk }}-information"
+                              aria-expanded="false">
+                              {% trans 'Information' %}
+                          </a>
+                          <a
+                              id="tab-project-{{ project.pk }}-participation"
+                              class="tab active"
+                              data-bs-toggle="tab"
+                              href="#tabpanel-project-{{ project.pk }}-participation"
+                              role="tab"
+                              aria-controls="tabpanel-project-{{ project.pk }}-participation"
+                              aria-expanded="true">
+                              {% trans 'Participation' %}
+                          </a>
+                          <a
+                              id="tab-project-{{ project.pk }}-result"
+                              class="tab"
+                              data-bs-toggle="tab"
+                              href="#tabpanel-project-{{ project.pk }}-result"
+                              role="tab"
+                              aria-controls="tabpanel-project-{{ project.pk }}-result"
+                              aria-expanded="false">
+                              {% trans 'Result' %}
+                          </a>
+                      </nav>
+                      {% include 'includes/project_header_mobile_toggle.html' %}
+                  </div>
                 {% include 'header_lower.html' with organisation=project.organisation %}
             </div>
-
             {% has_perm 'a4projects.change_project' request.user view.project as user_may_change %}
             {% if user_may_change %}
-            <div class="tablist--right">
-                <a href="{% url 'a4dashboard:project-edit' organisation_slug=project.organisation.slug project_slug=project.slug %}" class="btn btn--light btn--small" data-embed-target="external">{% trans 'Edit' %}</a>
+            <div class="u-align-right">
+                <a href="{% url 'a4dashboard:project-edit' organisation_slug=project.organisation.slug project_slug=project.slug %}" class="btn btn--light btn--small me-3" data-embed-target="external">{% trans 'Edit' %}</a>
             </div>
+            {% else %}
+            <div class="u-spacer-bottom-4"></div>
             {% endif %}
 
             <div
@@ -175,7 +176,7 @@
                     </div>
 
                     {% elif view.is_project_view %}
-                    <div class="participation-tile__wrapper">
+                    <div class="participation-tile__wrapper px-sm-3">
                         <div class="participation-tile__list-container">
                             <ul class="u-list-reset participation-tile__list">
                             {% for module in modules %}
@@ -241,11 +242,11 @@
                     <div class="row">
                     {% if project.is_private %}
                         <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 u-font-size-xs my-4">
-                            <i class="fas fa-lock pr-2" aria-hidden="true"></i>{% trans 'This project is not publicly visible. Only invited users can see content and actively participate.' %}
+                            <i class="fas fa-lock pe-2" aria-hidden="true"></i>{% trans 'This project is not publicly visible. Only invited users can see content and actively participate.' %}
                         </div>
                     {% elif project.is_semipublic %}
                         <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 u-font-size-xs my-4">
-                            <i class="fas fa-eye pr-2" aria-hidden="true"></i>{% trans 'This project is publicly visible. Invited users can actively participate.' %}
+                            <i class="fas fa-eye pe-2" aria-hidden="true"></i>{% trans 'This project is publicly visible. Invited users can actively participate.' %}
                         </div>
                     {% endif %}
                     </div>

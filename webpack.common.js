@@ -51,6 +51,11 @@ module.exports = {
       ],
       dependOn: 'adhocracy4'
     },
+    init_dashboard_accordion: {
+      import: [
+        './adhocracy-plus/assets/js/init_dashboard_accordion.js'
+      ]
+    },
     // A4 dependencies - we want all of them to go through webpack
     a4maps_display_point: {
       import: [
@@ -182,7 +187,9 @@ module.exports = {
   },
   resolve: {
     // redirect module requests when normal resolving fails.
-    fallback: { path: require.resolve('path-browserify') },
+    fallback: {
+      path: require.resolve('path-browserify')
+    },
     // attempt to resolve these extensions in this order.
     extensions: ['*', '.js', '.jsx', '.scss', '.css'],
     // create aliases to import or require certain modules more easily, $ signifys exact match

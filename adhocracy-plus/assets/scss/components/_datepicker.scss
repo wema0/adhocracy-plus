@@ -4,6 +4,10 @@
 
 .datepicker {
     @extend .input-group__input;
+
+    &::placeholder {
+        opacity: 0.5;
+    }
 }
 
 // stylelint-disable selector-max-specificity
@@ -103,6 +107,6 @@
 
 // The original styling causes a huge focus box in firefox
 .fd-screen-reader.fd-screen-reader {
-    @include sr-only;
+    @include visually-hidden;
     left: 0;
 }

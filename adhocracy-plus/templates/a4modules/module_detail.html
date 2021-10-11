@@ -34,13 +34,12 @@
 {% endblock %}
 
 {% block extra_messages %}
-<div class="u-bg-light py-5">
-    <div class="container container--shadow">
-
-        {{ block.super }}
-
-        {% if project.is_draft %}
+    {{ block.super }}
+    {% if project.is_draft %}
+    <div class="u-bg-light py-5">
+        <div class="container container--shadow">
             <div class="row">
+              <div class="col">
                 <ul class="messages">
                     <li class="alert alert--warning" role="alert">
                         <div class="container">
@@ -48,16 +47,18 @@
                         </div>
                     </li>
                 </ul>
+                </div>
             </div>
-        {% endif %}
+        </div>
     </div>
-</div>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
 <div class="u-bg-light py-5">
-    <div class="container container--shadow">
-        <div class="project-header{% if project.image %} project-header--image{% endif %} row" style="{% if view.project.image %}
+    <div class="container">
+      <div class="col-12 container--shadow">
+        <div class="project-header{% if project.image %} project-header--image{% endif %}" style="{% if view.project.image %}
                        background-image: url({{ project.image |thumbnail_url:'heroimage' }});
                        {% endif %}">
             <div class="container">
@@ -78,7 +79,7 @@
         </div>
         {% block module_nav %}
             {% if module.is_in_module_cluster  %}
-                <div class="my-5 pt-3 pt-sm-0 d-flex justify-content-center justify-content-sm-end">
+                <div class="my-5 pt-3 pt-sm-0 me-md-3 d-flex justify-content-center justify-content-sm-end">
                 {% if module.previous_module_in_cluster %}
                     <a class="btn btn--light text-muted" href="{{ module.previous_module_in_cluster.get_absolute_url }}">
                         <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -168,13 +169,13 @@
         {% if project.is_private %}
         <div class="row">
             <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 u-font-size-xs mb-4">
-                <i class="fas fa-lock pr-2" aria-hidden="true"></i>{% trans 'This project is not publicly visible. Only invited users can see content and actively participate.' %}
+                <i class="fas fa-lock pe-2" aria-hidden="true"></i>{% trans 'This project is not publicly visible. Only invited users can see content and actively participate.' %}
             </div>
         </div>
         {% elif project.is_semipublic %}
         <div class="row">
             <div class="col-md-10 col-lg-8 offset-md-1 offset-lg-2 u-font-size-xs mb-4">
-                <i class="fas fa-eye pr-2" aria-hidden="true"></i>{% trans 'This project is publicly visible. Invited users can actively participate.' %}
+                <i class="fas fa-eye pe-2" aria-hidden="true"></i>{% trans 'This project is publicly visible. Invited users can actively participate.' %}
             </div>
         </div>
         {% endif %}
@@ -189,7 +190,7 @@
         {% block phase_content %}{% endblock %}
         {% block other_modules %}
             {% if module.is_in_module_cluster %}
-                <div class="participation-tile__wrapper">
+                <div class="participation-tile__wrapper px-sm-3">
                     <div class="participation-tile__list-container">
                         <ul class="u-list-reset participation-tile__list">
                             <h3 class="participation-tile__list-header">{%  trans 'More questions from this online participation' %}</h3>
@@ -204,6 +205,7 @@
             {% endif %}
         {% endblock %}
         {% include 'footer_upper.html' with organisation=project.organisation %}
+        </div>
     </div>
 </div>
 {% endblock %}

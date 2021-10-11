@@ -24,7 +24,7 @@
                             title="{% trans 'Organisations' %}"
                             type="button"
                             class="dropdown-toggle btn btn--none btn--small"
-                            data-toggle="dropdown"
+                            data-bs-toggle="dropdown"
                             data-flip="false"
                             aria-haspopup="true"
                             aria-expanded="false"
@@ -70,12 +70,12 @@
             <ul class="nav d-sm-none tablist__right">
                 <li class="nav-item dropdown">
                   <a
-                      class="nav-link dropdown-toggle tab active mr-2"
-                      data-toggle="dropdown"
+                      class="nav-link dropdown-toggle tab active me-2"
+                      data-bs-toggle="dropdown"
                       href="{% url 'a4dashboard:project-list' organisation_slug=view.organisation.slug %}"
                       role="button"
                       aria-expanded="false"
-                      data-toggle="tab">
+                      data-bs-toggle="tab">
                       {% url 'a4dashboard:project-list' organisation_slug=view.organisation.slug as project_list %}
                       {% url 'a4dashboard:newsletter-create' organisation_slug=view.organisation.slug as newsletter_create %}
                       {% if request.path ==  project_list %}
@@ -87,7 +87,7 @@
                       {% endif %}
                       <i class="fa fa-caret-down" aria-hidden="true"></i>
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right">
+                  <div class="dropdown-menu dropdown-menu-end">
                       <a
                           class="dropdown-item"
                           href="{{ project_list }}">
@@ -121,4 +121,5 @@
 
 {% block extra_js %}
     <script src="{% static 'unload_warning.js' %}"></script>
+    <script src="{% static 'init_dashboard_accordion.js' %}"></script>
 {% endblock %}

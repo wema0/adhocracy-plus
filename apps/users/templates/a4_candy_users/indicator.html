@@ -1,28 +1,28 @@
 {% load i18n static thumbnail %}
 
 {% if request.user.is_authenticated %}
-    <div class="dropdown dropdown--right userindicator__dropdown">
+    <div class="dropdown userindicator__dropdown">
 
         <button
             class="d-md-none dropdown-toggle btn btn--secondary-filled btn--square btn--attached-top header-upper__mobile-toggle"
-            data-toggle="dropdown"
+            data-bs-toggle="dropdown"
             data-flip="false"
             aria-haspopup="true"
             aria-expanded="false"
             id="user-actions">
-            <span class="d-none d-sm-inline-block pr-1">{% trans 'Menu' %}</span>
+            <span class="d-none d-sm-inline-block pe-1">{% trans 'Menu' %}</span>
         </button>
 
         <button
             class="d-none d-md-inline-block dropdown-toggle btn btn--secondary-filled btn--attached-top btn--square btn--align-left header-upper__toggle"
-            data-toggle="dropdown"
+            data-bs-toggle="dropdown"
             data-flip="false"
             aria-haspopup="true"
             aria-expanded="false"
             id="user-actions"
         >
             <div class="userindicator__btn-img" style="background-image: {% if request.user.avatar %} url({{ request.user.avatar|thumbnail_url:'avatar'}}) {% else %}  url({{ request.user.avatar_fallback }}) {% endif %}"></div>
-            <div class="userindicator__btn-text text-left">
+            <div class="userindicator__btn-text text-start">
                 <span class="userindicator__hello">{% trans "Hello" %}</span>
                 <br>
                 <div class="u-overflow-ellipsis">{{ request.user.username }}</div>
@@ -30,7 +30,7 @@
             <i class="fa fa-chevron-down" aria-hidden="true"></i>
         </button>
 
-        <div class="dropdown-menu dropdown-menu-right userindicator__dropdown-menu" aria-labelledby="user-actions">
+        <div class="dropdown-menu dropdown-menu-end userindicator__dropdown-menu" aria-labelledby="user-actions">
             {% if request.user.is_superuser %}
                 <a class="dropdown-item" href="{% url 'admin:index' %}">{% trans "Admin" %}</a>
             {% endif %}

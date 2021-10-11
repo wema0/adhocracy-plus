@@ -3,8 +3,8 @@
     <ul class="nav d-inline-block d-md-none" role="tablist">
         <li class="nav-item dropdown">
           <a
-              class="nav-link dropdown-toggle tab active mr-2"
-              data-toggle="dropdown"
+              class="nav-link dropdown-toggle tab active me-2"
+              data-bs-toggle="dropdown"
               href="#"
               role="button"
               aria-haspopup="true"
@@ -12,14 +12,14 @@
               {% trans 'Project' %}
               <i class="fa fa-caret-down" aria-hidden="true"></i>
           </a>
-          <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-menu dropdown-menu-end">
               <a
                   class="dropdown-item"
                   id="tab-project-{{ project.pk }}-information"
                   href="#tabpanel-project-{{ project.pk }}-information"
                   aria-controls="tabpanel-project-{{ project.pk }}-information"
                   aria-expanded="false"
-                  data-toggle="tab">
+                  data-bs-toggle="tab">
                   {% trans 'Information' %}
               </a>
               <a
@@ -28,7 +28,7 @@
                   href="#tabpanel-project-{{ project.pk }}-participation"
                   aria-controls="tabpanel-project-{{ project.pk }}-participation"
                   aria-expanded="true"
-                  data-toggle="tab">
+                  data-bs-toggle="tab">
                   {% trans 'Participation' %}
               </a>
               <a
@@ -37,7 +37,7 @@
                   id="tab-project-{{ project.pk }}-result"
                   aria-controls="tabpanel-project-{{ project.pk }}-result"
                   aria-expanded="false"
-                  data-toggle="tab">
+                  data-bs-toggle="tab">
                   {% trans 'Result' %}
               </a>
           </div>

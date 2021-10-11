@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="container">
-    <div class="l-menu">
-        <div class="l-menu__menu">
+    <div class="row">
+        <div class="col-md-3">
             <nav class="dashboard-nav">
                 <div class="dashboard-nav__dropdown">Form
                 </div>
@@ -160,7 +160,7 @@
             </nav>
         </div>
 
-        <div class="l-menu__content">
+        <div class="col-md-9">
             <h1 class="mt-0">Component Library</h1>
 
             <h2 class="mt-0">Style Guide</h2>
@@ -309,7 +309,7 @@
 
                 <div class="cl-example">
                     <div class="accordion">
-                        <a id="accordion-{{ index }}-title" href="#accordion-{{ index }}-body" class="accordion__title collapsed" aria-haspopup="true" aria-expanded="false" data-toggle="collapse">
+                        <a id="accordion-{{ index }}-title" href="#accordion-{{ index }}-body" class="accordion__title collapsed" aria-haspopup="true" aria-expanded="false" data-bs-toggle="collapse">
                             <h2>
                                 Docs Block Title
                                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
@@ -584,7 +584,7 @@
                     </p>
                     <p>
                         <button class="btn btn--primary-filled" type="button">Primary Button filled</button>
-                        <button class="btn btn--primary-filled" type="button">Secondary Button filled</button>
+                        <button class="btn btn--secondary-filled" type="button">Secondary Button filled</button>
                         <button class="btn btn--bg-tertiary" type="button">Tertiary background</button>
                     </p>
                     <p>
@@ -594,7 +594,7 @@
                     </p>
                     <p>
                         <button class="btn btn--link" type="button">Button as Link</button>
-                        <button class="btn btn--none" type="button">No Button</button>
+                        <button class="btn btn--none" type="button">Button none</button>
                     </p>
                     <p>
                         <button class="btn btn--select" type="button">Select Button <i class="fa fa-caret-down" aria-hidden="true"></i></button>
@@ -627,7 +627,7 @@
 
                         <div class="category-formset__form__icon select-icon col">
                             <div class="dropdown select-dropdown category-icon-select">
-                                <button class="btn select-dropdown__btn category-icon-select__btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn select-dropdown__btn category-icon-select__btn" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="select-dropdown__btn__label">
                                         <img src="/static/category_icons/icons/diamant_icon.svg" class="select-dropdown__btn__label__icon">
                                         <span class="select-dropdown__btn__label__label">Diamant</span>
@@ -738,7 +738,7 @@
                                                 </div>
                                                 <ul class="nav navbar-nav">
                                                     <li class="dropdown">
-                                                        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-flip="false" data-toggle="dropdown"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                                                        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-flip="false" data-bs-toggle="dropdown"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
                                                         <ul class="dropdown-menu">
                                                             <li><button type="button">Edit</button></li>
                                                             <li class="divider"></li>
@@ -775,7 +775,7 @@
                                                                 <button class="rating-button rating-down"><i class="fa fa-chevron-down" aria-hidden="true"></i>0</button>
                                                             </div>
                                                             <ul class="nav navbar-nav">
-                                                                <li class="dropdown"><button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-flip="false" data-toggle="dropdown"><i class="fa fa-ellipsis-h"
+                                                                <li class="dropdown"><button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-flip="false" data-bs-toggle="dropdown"><i class="fa fa-ellipsis-h"
                                                                           aria-hidden="true"></i></button>
                                                             </ul>
                                                         </nav>
@@ -840,10 +840,21 @@
                 <h2 id="cl-dashboard-nav">Dashboard Nav</h2>
 
                 <div class="cl-example">
+                  <div class="dashboard-nav">
+                    <div class="dashboard-nav__dropdown" data-bs-toggle="collapse" href="#dashboardCollapseProj" aria-expanded="true" aria-controls="#dashboardCollapseProj" data-bs-target="#dashboardCollapseProj">
+                        <i class="fas fa-check-circle text-info" title="Projekt bereit zur Veröffentlichung" aria-label="Projekt bereit zur Veröffentlichung"></i>
+                        Project of all the modules
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </div>
+                    <ul class="dashboard-nav__pages collapse show" id="dashboardCollapseProj" aria-hidden="false">
+                        <li class="dashboard-nav__page">
+                            <a href="/" class="dashboard-nav__item dashboard-nav__item--interactive is-active">
+                                Basic
+                            </a>
+                        </li>
+                    </ul>
+                  </div>
                     <nav class="dashboard-nav">
-                        <div class="dashboard-nav__dropdown">
-                            <div class="dashboard-nav__item">Dashboard nav item (in a dashboard-nav__dropdown, which is not used as dropdown)</div>
-                        </div>
                         <ul class="dashboard-nav__pages">
                             <li class="dashboard-nav__page">
                                 <a href="#" class="dashboard-nav__item dashboard-nav__item--interactive">
@@ -866,6 +877,22 @@
                                     <i class="fa fa-exclamation-circle text-danger" title="Missing fields for publication" aria-label="Missing fields for publication"></i>
                                 </a>
                             </li>
+                            <li class="dashboard-nav__page">
+                            <div class="dashboard-nav__item switch">
+                                <div class="form-check form-switch" role="group">
+                                  <form class="dashboard-nav__form--project" action="" method="post" data-ignore-submit="true">
+                                  <input type="hidden" name="csrfmiddlewaretoken" value="">
+                                  <input type="hidden" name="referrer" value="">
+                                  <button name="action" value="publish" class="btn--full">
+                                      <input type="checkbox" class="form-check-input me-2" id="dashboardToggle_3">
+                                      <label class="form-check-label dashboard-nav__toggle-label" for="dashboardToggle_3">
+                                        dem Projekt hinzufügen
+                                      </label>
+                                      </button>
+                                </form>
+                                </div>
+                            </div>
+                          </li>
                         </ul>
                     </nav>
                 </div>
@@ -884,7 +911,7 @@
                                           class="fd-screen-reader">Show Calendar</span></a>
                                 </div>
                                 <div>
-                                    <label class="sr-only" for="id_phase_set-0-start_date_time">Start time</label>
+                                    <label class="visually-hidden" for="id_phase_set-0-start_date_time">Start time</label>
                                     <input type="text" name="phase_set-0-start_date_1" value="00:00" id="id_phase_set-0-start_date_time" class="timepicker" placeholder="00:00">
                                 </div>
                             </div>
@@ -897,7 +924,7 @@
                 <div class="cl-example">
                     <div class="bg--light">
                         <nav class="doc-toc" aria-label="Table of Contents">
-                            <button class="doc-toc__toggle collapsed" data-toggle="collapse" data-target="#doc-toc__content" aria-expanded="true" aria-controls="doc-toc__content">
+                            <button class="doc-toc__toggle collapsed" data-bs-toggle="collapse" data-bs-target="#doc-toc__content" aria-expanded="true" aria-controls="doc-toc__content">
                                 <h2 class="doc-toc__title">Table of Contents</h2>
                                 <i class="fa fa-chevron-up" aria-hidden="true"></i>
                             </button>
@@ -990,17 +1017,15 @@
                     <p>These forms may only contain <a href="#">Buttons</a>, <a href="#">Dropdowns</a> and <code>input-groups</code>.</p>
                     <div class="cl-example">
                         <div class="form-inline" role="group" aria-label="Filter bar">
-                            <a class="btn btn--light mr-1" href="#" aria-label="View as map">
+                            <a class="btn btn--light me-1" href="#" aria-label="View as map">
                                 <i class="fa fa-map" aria-hidden="true"></i>
                                 View
                             </a>
-                            <form class="input-group mr-1" method="get">
-                                <input class="form-control" type="search" name="search" placeholder="Search" value="">
-                                <div class="input-group-append">
-                                    <button class="btn btn--light" type="submit" title="Search">
-                                        <i class="fa fa-search" aria-label="Search"></i>
-                                    </button>
-                                </div>
+                            <form class="input-group me-1" method="get">
+                                <input class="form-control" type="search" name="search" placeholder="Search" value="" />
+                                <button class="btn btn--light" type="submit" title="Search">
+                                    <i class="fa fa-search" aria-label="Search"></i>
+                                </button>
                             </form>
                             <div class="dropdown">
                                 <button type="button" class="dropdown-toggle btn btn--light btn--select">
@@ -1008,7 +1033,7 @@
                                     <i class="fa fa-caret-down" aria-hidden="true"></i>
                                 </button>
                             </div>
-                            <div class="ml-auto">
+                            <div class="ms-auto">
                                 <div class="dropdown">
                                     <button type="button" class="dropdown-toggle btn btn--light btn--select">
                                         Ordering: Most recent
@@ -1078,7 +1103,7 @@
                                     </nav>
                                 </div>
                                 <div class="col-12 col-sm-6 offset-sm-6 offset-lg-0 d-flex flex-column">
-                                    <a href="http://www.liqd.net" class="btn btn--full  btn--bg-tertiary  mb-0 mr-0 mt-auto">Support the further development of the platform<br><b>Donate now</b></a>
+                                    <a href="http://www.liqd.net" class="btn btn--full  btn--bg-tertiary  mb-0 me-0 mt-auto">Support the further development of the platform<br><b>Donate now</b></a>
                                 </div>
                             </div>
                         </div>
@@ -1093,14 +1118,14 @@
                             <a class="navbar-brand header-upper__brand" href="/">
                                 <img src="/static/images/logo.svg" alt="anything blahhhhhhhh" class="header-upper__brand-img">
                             </a>
-                            <ul class="header-upper__nav navbar-nav ml-auto">
+                            <ul class="header-upper__nav navbar-nav ms-auto">
                                 <li class="nav-item header-upper__lang">
                                     <div class="dropdown ">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-label="Language selector, Deutsch selected" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-label="Language selector, Deutsch selected" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             de
-                                            <i class="fa fa-caret-down pl-1" aria-hidden="true"></i>
+                                            <i class="fa fa-caret-down ps-1" aria-hidden="true"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                             <form>
                                                 <button class="dropdown-item" role="button" type="submit" aria-label="select Englisch">
                                                     English
@@ -1125,22 +1150,22 @@
                                     </div>
                                 </li>
                                 <li class="nav-item header-upper__user">
-                                    <div class="dropdown dropdown--right userindicator__dropdown">
-                                        <button class="d-md-none dropdown-toggle btn btn--primary-filled btn--square btn--attached-top header-upper__mobile-toggle" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"
+                                    <div class="dropdown userindicator__dropdown">
+                                        <button class="d-md-none dropdown-toggle btn btn--primary-filled btn--square btn--attached-top header-upper__mobile-toggle" data-bs-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"
                                           id="user-actions">
-                                            <span class="d-none d-sm-inline-block pr-1">Menü</span>
+                                            <span class="d-none d-sm-inline-block pe-1">Menü</span>
                                         </button>
-                                        <button class="d-none d-md-inline-block dropdown-toggle btn btn--primary-filled btn--attached-top btn--square btn--align-left header-upper__toggle" data-toggle="dropdown" data-flip="false"
+                                        <button class="d-none d-md-inline-block dropdown-toggle btn btn--primary-filled btn--attached-top btn--square btn--align-left header-upper__toggle" data-bs-toggle="dropdown" data-flip="false"
                                           aria-haspopup="true" aria-expanded="false" id="user-actions">
                                             <div class="userindicator__btn-img" style="background-image:   url(/static/images/avatar-01.svg) "></div>
-                                            <div class="userindicator__btn-text text-left">
+                                            <div class="userindicator__btn-text text-start">
                                                 <span class="userindicator__hello">Hello</span>
                                                 <br>
                                                 <div class="u-overflow-ellipsis">User Name</div>
                                             </div>
                                             <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                         </button>
-                                        <div class="dropdown-menu dropdown-menu-right userindicator__dropdown-menu" aria-labelledby="user-actions">
+                                        <div class="dropdown-menu dropdown-menu-end userindicator__dropdown-menu" aria-labelledby="user-actions">
                                             <a class="dropdown-item" href="/django-admin/">Admin</a>
                                             <a class="dropdown-item" href="/userdashboard/overview/">My Overview</a>
                                             <a class="dropdown-item" href="/account/">My Settings</a>
@@ -1168,14 +1193,14 @@
                             <a class="navbar-brand header-upper__brand" href="/">
                                 <img src="/static/images/logo.svg" alt="adhocracy+" class="header-upper__brand-img">
                             </a>
-                            <ul class="header-upper__nav navbar-nav ml-auto">
+                            <ul class="header-upper__nav navbar-nav ms-auto">
                                 <li class="nav-item header-upper__lang">
                                     <div class="dropdown ">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-label="Sprachauswahl Deutsch ausgewählt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-label="Sprachauswahl Deutsch ausgewählt" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             de
-                                            <i class="fa fa-caret-down pl-1" aria-hidden="true"></i>
+                                            <i class="fa fa-caret-down ps-1" aria-hidden="true"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                             <form action="/i18n/setlang/" method="post">
                                                 <button class="dropdown-item" role="button" type="submit" aria-label="Wählen SieEnglisch">
                                                     English
@@ -1190,12 +1215,12 @@
                                     </div>
                                 </li>
                                 <li class="nav-item header-upper__user">
-                                    <div class="dropdown dropdown--right userindicator__dropdown">
-                                        <button class="dropdown-toggle btn btn--primary-filled btn--square btn--attached-top header-upper__mobile-toggle" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"
+                                    <div class="dropdown dropdown-menu-end userindicator__dropdown">
+                                        <button class="dropdown-toggle btn btn--primary-filled btn--square btn--attached-top header-upper__mobile-toggle" data-bs-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false"
                                           id="user-actions">
-                                            <span class="d-none d-sm-inline-block pr-1">Menü</span>
+                                            <span class="d-none d-sm-inline-block pe-1">Menü</span>
                                         </button>
-                                        <div class="dropdown-menu dropdown-menu-right userindicator__dropdown-menu" aria-labelledby="user-actions">
+                                        <div class="dropdown-menu dropdown-menu-end userindicator__dropdown-menu" aria-labelledby="user-actions">
                                             <a class="dropdown-item" href="">Admin</a>
                                             <a class="dropdown-item" href="/account/">Nutzerkonto Einstellungen</a <a class="dropdown-item" href="/profile/Philli%20Admin%20Morland/">Dein Profil</a>
                                             <a class="dropdown-item" href="/teststadt/dashboard/organisations/projects/">
@@ -1225,7 +1250,7 @@
                                         <h3>Die besten Lösungen entstehen, wenn man sie gemeinsam entwickelt. Mit adhocracy+ wollen wir digitale Demokratie einfach machen: <b>für alle und überall.</b></h3>
                                     </div>
                                 </div>
-                                <div class="btn btn--text-color-inverted btn--square homepage-hero__btn--info" data-toggle="tooltip" data-placement="top" aria-label="Header image: Freigegeben durch unsplash.com Helloquence @helloquence" title=""
+                                <div class="btn btn--text-color-inverted btn--square homepage-hero__btn--info" data-bs-toggle="tooltip" data-placement="top" aria-label="Header image: Freigegeben durch unsplash.com Helloquence @helloquence" title=""
                                   tabindex="0" data-original-title="Freigegeben durch unsplash.com Helloquence @helloquence">
                                     <i class="fas fa-info" aria-hidden="true"></i>
                                 </div>
@@ -1238,19 +1263,17 @@
 
                 <div class="cl-example">
                     <div class="l-top-overlap">
-                        <div class="filter-bar form-inline" role="group" aria-label="Filter bar">
-                            <a class="btn btn--light mr-1" href="#" aria-label="View as map">
+                        <div class="filter-bar" role="group" aria-label="Filter bar">
+                            <a class="btn btn--light me-1" href="#" aria-label="View as map">
                                 <i class="fa fa-map" aria-hidden="true"></i>
                                 View
                             </a>
 
-                            <form class="input-group mr-1">
-                                <input class="form-control" type="search" name="search" placeholder="Search" value="">
-                                <div class="input-group-append">
-                                    <button class="btn btn--light" type="submit" title="Search">
-                                        <i class="fa fa-search" aria-label="Search"></i>
-                                    </button>
-                                </div>
+                            <form class="input-group me-1">
+                                <input class="form-control" type="search" name="search" placeholder="Search" value="" />
+                                <button class="btn btn--light" type="submit" title="Search">
+                                    <i class="fa fa-search" aria-label="Search"></i>
+                                </button>
                             </form>
 
                             <div class="dropdown">
@@ -1260,7 +1283,7 @@
                                 </button>
                             </div>
 
-                            <div class="dropdown ml-auto">
+                            <div class="dropdown ms-auto">
                                 <button type="button" class="dropdown-toggle btn btn--light btn--select">
                                     Ordering: Most recent
                                     <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -1289,7 +1312,7 @@
                 <div class="cl-example" style="min-height: 22em">
                     First button shown when clicked and no comment saved, second button display state after comment has been saved.
                     <div class="lr-bar__right">
-                        <div class="dropdown dropdown--right show">
+                        <div class="dropdown dropdown-menu-end show">
                             <button title="Remark" type="button" class="dropdown-toggle btn btn--light btn--small" aria-haspopup="true" aria-expanded="true" id="idea-remark__dropdown">
                                 <i class="fa fa-comment" aria-label="Moderator remark"></i>
                                 <i class="fa fa-check-circle idea-remark__btn__notify  d-none " aria-hidden="true"></i>
@@ -1310,8 +1333,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="dropdown dropdown--right">
-                            <button title="Remark" type="button" class="dropdown-toggle btn btn--light btn--small" data-flip="false" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="idea-remark__dropdown">
+                        <div class="dropdown dropdown-menu-end">
+                            <button title="Remark" type="button" class="dropdown-toggle btn btn--light btn--small" data-flip="false" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="idea-remark__dropdown">
                                 <i class="fa fa-comment" aria-label="Moderator remark"></i>
                                 <i class="fa fa-check-circle idea-remark__btn__notify  d-none " aria-hidden="true" style="display: inline;"></i>
                             </button>
@@ -1356,7 +1379,7 @@
                                     0
                                 </button>
                             </div>
-                            <div class="dropdown dropdown--right lr-bar__right">
+                            <div class="dropdown dropdown-menu-end lr-bar__right">
                                 <button class="dropdown-toggle btn btn--light btn--small">
                                     <i class="fa fa-ellipsis-h"></i>
                                 </button>
@@ -1507,16 +1530,16 @@
                 <h2 id="cl-menu-layout">Menu Layout</h2>
 
                 <div class="cl-example">
-                    <div class="l-menu">
-                        <nav class="l-menu__menu" aria-label="">
+                    <div class="row">
+                        <nav class="col-md-3" aria-label="">
                             <div class="dashboard-nav">
                                 <div class="dashboard-nav__item">Left Menu - Project nav</div>
                             </div>
                         </nav>
-                        <div class="mb-5 l-menu__content--aside">
+                        <div class="mb-5 col-md-6">
                             <h1 class="mt-0">Dashbored content</h1>
                         </div>
-                        <div class="l-menu__aside">
+                        <div class="col-md-3">
                             <div class="progress-box">Right Menu - Progress</div>
                         </div>
                     </div>
@@ -1635,31 +1658,33 @@
                 <h2 id="cl-progress">Progress</h2>
 
                 <div class="cl-example">
-                    <div class="container">
-                        <div class="l-menu__aside">
-                            <div class="progress-box">
-                                <svg viewBox="0 0 35 35" class="progress-box__progress progress" role="presentation">
-                                    <circle class="progress__background" r="15.9" cx="50%" cy="50%"></circle>
-                                    <circle class="progress__value" stroke-dasharray="64 100" r="15.9" cx="50%" cy="50%"></circle>
-                                    <text class="progress__label" x="50%" y="50%" dy="0.3em">50%</text>
-                                </svg>
-                                <div class="progress-box__description">
-                                    <strong>7 from 11</strong>
-                                    <br>required fields for publication
-                                </div>
-                            </div>
-                            <form action="/dashboard/publish/project/choosing-map/" method="post" data-ignore-submit="true">
-                                <input name="name" value="" type="hidden">
-                                <input name="referrer" value="/dashboard/projects/choosing-map/information/" type="hidden">
-                                <button name="action" value="publish" disabled="" class="btn btn--primary btn--full btn--attached-top">Veröffentlichen</button>
-                            </form>
-                            <a href="/projects/choosing-map/" target="_self" class="btn btn--light btn--full">
-                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                Vorschau
-                            </a>
-                        </div>
+                        <ul class="progress-line u-spacer-bottom">
+                            <li class="progress-line__entry">
+                                <span class="progress-line__line--bottom"></span>
+                                <i class="fas fa-check-circle u-success progress-line__icon" title="Project type created" aria-label="Project type created"></i>
+                                <span>Create a new Project</span>
+                            </li>
+                            <li class="progress-line__entry">
+                                <span class="progress-line__line--top"></span>
+                                <span class="progress-line__line--bottom"></span>
+                                <i class="fas fa-check-circle u-success progress-line__icon" title="Project type ready for publication" aria-label="Project type ready for publication"></i>
+                                <span class="progress-line__entry--active">
+                                    <span>Fill in project details</span>
+                                </span>
+                            </li>
+                            <li class="progress-line__entry">
+                                <span class="progress-line__line--top"></span>
+                                <span class="progress-line__line--bottom"></span>
+                                <i class="fas fa-circle progress-line__icon--active" title="No module created" aria-label="No module created"></i>
+                                <span>Add participation module(s)</span>
+                            </li>
+                            <li class="progress-line__entry">
+                                <span class="progress-line__line--top"></span>
+                                <i class="far fa-circle progress-line__icon" title="Project type not ready for publication" aria-label="Project type not ready for publication"></i>
+                                <span>Publish project</span>
+                            </li>
+                        </ul>
                     </div>
-                </div>
 
                 <h2 id="cl-project-header">Project Header</h2>
 
@@ -1769,9 +1794,9 @@
                     <div class="tablist tablist--left">
                         <div class="container">
                             <nav class="nav" role="tablist">
-                                <a id="tab-project-3-information" class="tab" data-toggle="tab" href="#" role="tab" aria-controls="tabpanel-project-3-information" aria-expanded="false">Tab</a>
-                                <a id="tab-project-3-participation" class="tab active" data-toggle="tab" href="#" role="tab" aria-controls="tabpanel-project-3-participation" aria-expanded="true">Tab 2</a>
-                                <a id="tab-project-3-result" class="tab" data-toggle="tab" href="#" role="tab" aria-controls="tabpanel-project-3-result" aria-expanded="false">Tab 3</a>
+                                <a id="tab-project-3-information" class="tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="tabpanel-project-3-information" aria-expanded="false">Tab</a>
+                                <a id="tab-project-3-participation" class="tab active" data-bs-toggle="tab" href="#" role="tab" aria-controls="tabpanel-project-3-participation" aria-expanded="true">Tab 2</a>
+                                <a id="tab-project-3-result" class="tab" data-bs-toggle="tab" href="#" role="tab" aria-controls="tabpanel-project-3-result" aria-expanded="false">Tab 3</a>
                             </nav>
                         </div>
                     </div>
@@ -1837,7 +1862,7 @@
                         </ul>
 
                         <li class="card blueprint__tile mt-4">
-                            <div class="row no-gutters">
+                            <div class="row g-0">
                                 <div class="col-lg-4 d-flex">
                                     <div class="card-img-top blueprint__image" style="background-image: url(/static/images/brainstorming.svg);"></div>
                                 </div>
@@ -1849,7 +1874,7 @@
                                         <p>Die Teilnehmer*innen können eigene Ideen einreichen und die Ideen Anderer diskutieren.</p>
                                         <p></p>
 
-                                        <input type="submit" class="list-item__cta ml-auto" value="Modul hinzufügen">
+                                        <input type="submit" class="list-item__cta ms-auto" value="Modul hinzufügen">
                                     </form>
                                 </div>
                             </div>
@@ -1873,7 +1898,7 @@
                                                 <div class="slick-slide slick-current slick-center" data-slick-index="0" aria-hidden="false">
                                                     <div><a href="" aria-labelledby="timeline_item timeline_entry_1" style="width: 100%; display: inline-block;" tabindex="0">
                                                             <div id="timeline_item" class="timeline-carousel__dot  initial ">
-                                                                <span class="sr-only">Timeline item</span>
+                                                                <span class="visually-hidden">Timeline item</span>
                                                             </div>
                                                             <div class="timeline-carousel__label  initial ">
                                                                 <span id="timeline_entry_1">
@@ -1886,7 +1911,7 @@
                                                 <div class="slick-slide" data-slick-index="1" aria-hidden="false" tabindex="-1">
                                                     <div><a href="/liqd-orga/projects/text-commenting-documents/?initialSlide=1" aria-labelledby="timeline_item timeline_entry_2" style="width: 100%; display: inline-block;" tabindex="0">
                                                             <div id="timeline_item" class="timeline-carousel__dot ">
-                                                                <span class="sr-only">Timeline item</span>
+                                                                <span class="visually-hidden">Timeline item</span>
                                                             </div>
                                                             <div class="timeline-carousel__label ">
                                                                 <span id="timeline_entry_2">
@@ -1920,11 +1945,9 @@
                                     <div class="upload-wrapper__fields input-group">
                                         <input name="logo" id="id_logo" class="form-control form-control-file" type="file">
                                         <input name="__noname__" class="form-control form-control-file-dummy" placeholder="Select a picture from your local folder." tabindex="-1" id="text-id_logo" type="text">
-                                        <div class="input-group-append">
-                                            <label for="id_logo" class="upload-wrapper__action input-group__after btn" title="Upload a picture">
-                                                <i class="fas fa-cloud-upload-alt" aria-label="Upload a picture"></i>
-                                            </label>
-                                        </div>
+                                        <label for="id_logo" class="upload-wrapper__action input-group__after btn" title="Upload a picture">
+                                            <i class="fas fa-cloud-upload-alt" aria-label="Upload a picture"></i>
+                                        </label>
                                     </div>
                                     <div class="form-id_logo upload-wrapper__preview">
                                         <input name="logo-clear" id="logo_id" class="clear-image" data-upload-clear="id_logo" type="checkbox">

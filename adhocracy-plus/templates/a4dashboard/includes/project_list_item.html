@@ -45,7 +45,7 @@
                         <button
                                 type="button"
                                 class="dropdown-toggle btn btn--light btn--small"
-                                data-toggle="dropdown"
+                                data-bs-toggle="dropdown"
                                 data-flip="false"
                                 aria-haspopup="true"
                                 aria-expanded="false"
@@ -54,7 +54,7 @@
                         >
                             <i class="fa fa-caret-down" aria-label="{% trans 'more' %}"></i>
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right
+                        <div class="dropdown-menu dropdown-menu-end
                         " aria-labelledby="project-actions">
                             <form method="post" class="list-item__action">
                                 {% csrf_token %}
@@ -65,7 +65,7 @@
                                     {% trans 'Duplicate' %}
                                 </button>
                             </form>
-                            <a href="#" class="dropdown-item font-weight-normal" data-toggle="modal" data-target="#project{{ project.pk }}DeleteModal">
+                            <a href="#" class="dropdown-item font-weight-normal" data-bs-toggle="modal" data-bs-target="#project{{ project.pk }}DeleteModal">
                                 <i class="far fa-trash-alt" aria-hidden="true"></i>
                                 {% trans 'delete' %}
                             </a>
@@ -83,15 +83,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="project{{ project.pk }}DeleteModal">{% blocktrans with project_name=project.name %} Are you sure you want to delete the project '{{ project_name }}'? {% endblocktrans %}</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn--close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-footer">
                 <form action="{% url "project-delete" pk=project.pk organisation_slug=project.organisation.slug %}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="btn btn--primary">{% trans 'delete' %}</button>
-                    <button type="button" class="btn btn--secondary" data-dismiss="modal">{% trans 'cancel' %}</button>
+                    <button type="button" class="btn btn--secondary" data-bs-dismiss="modal">{% trans 'cancel' %}</button>
                 </form>
             </div>
         </div>

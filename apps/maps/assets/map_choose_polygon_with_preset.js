@@ -68,7 +68,7 @@ function init () {
       return $.parseHTML(
         '<div class="leaflet-bar leaflet-control leaflet-control-custom">' +
           '<a href="#" id="map-export-link" title="' + exportLabel + '"><i class="fa fa-download" aria-label="' + exportLabel + '"></i></a>' +
-          '<a href="#map-import-modal" data-toggle="modal" data-target="#map-import-modal" title="' + importLabel + '"><i class="fa fa-upload" aria-label="' + importLabel + '"></i></a>' +
+          '<a href="#map-import-modal" data-bs-toggle="modal" data-bs-target="#map-import-modal" title="' + importLabel + '"><i class="fa fa-upload" aria-label="' + importLabel + '"></i></a>' +
         '</div>'
       )[0]
     },
@@ -81,7 +81,7 @@ function init () {
             '<div class="modal-content">' +
               '<div class="modal-header">' +
                 '<h2 class="modal-title mt-0">' + modalTitle + '</h2>' +
-                '<button class="close" aria-label="' + django.gettext('Close') + '" data-dismiss="modal"><i class="fa fa-times"></i></button>' +
+                '<button class="close" aria-label="' + django.gettext('Close') + '" data-bs-dismiss="modal"><i class="fa fa-times"></i></button>' +
               '</div>' +
               '<div class="modal-body">' +
                 '<form id="map-import-form" data-ignore-submit="true">' +
@@ -102,7 +102,7 @@ function init () {
                 '</form>' +
               '</div>' +
               '<div class="modal-footer">' +
-                '<button class="btn btn--light" data-dismiss="modal">' + django.gettext('Cancel') + '</button>' +
+                '<button class="btn btn--light" data-bs-dismiss="modal">' + django.gettext('Cancel') + '</button>' +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -268,7 +268,7 @@ function init () {
       $('#id_' + name).trigger('change')
     })
 
-    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
       map.invalidateSize().fitBounds(getBaseBounds(L, polygon, bbox))
     })
 

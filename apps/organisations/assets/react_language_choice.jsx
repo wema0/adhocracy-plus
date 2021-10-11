@@ -35,6 +35,7 @@ class LanguageChoice extends React.Component {
   activateTab (e) {
     const languageCode = e.target.textContent
     this.setState({ activeTab: languageCode })
+    e.preventDefault()
   }
 
   addLanguage (e) {
@@ -72,18 +73,18 @@ class LanguageChoice extends React.Component {
   render () {
     return (
       <div className="language-choice-container">
-        <ul className="checkbox-list btn--group">
+        <ul className="checkbox-list nav btn--group">
           {
             this.props.languages.map((languageCode, i) => {
               return (
-                <li key={languageCode} className={languageCode === this.state.activeTab ? 'active' : ''}>
+                <li key={languageCode} className={'nav-item ' + languageCode === this.state.activeTab ? 'active' : ''}>
                   <input
                     type="checkbox" name={languageCode} id={languageCode + '_language-choice'} value={languageCode}
                     checked={this.state.activeLanguages.indexOf(languageCode) !== -1} readOnly
                   />
                   <button
                     href={'#' + languageCode + '_language_panel'} className={'btn btn--light btn--small language-choice ' + (languageCode === this.state.activeTab ? 'active' : '')}
-                    data-toggle="tab" onClick={this.activateTab.bind(this)}
+                    data-bs-toggle="tab" onClick={this.activateTab.bind(this)}
                   >{languageCode}
                   </button>
                 </li>
@@ -91,9 +92,9 @@ class LanguageChoice extends React.Component {
             })
           }
         </ul>
-        <div className="btn--group ml-5">
+        <div className="btn--group ms-5">
           <div className="dropdown">
-            <button className="dropdown-toggle btn btn--light btn--small" type="button" data-toggle="dropdown">
+            <button className="dropdown-toggle btn btn--light btn--small" type="button" data-bs-toggle="dropdown">
               <i className="fa fa-plus" />
             </button>
             <div className="dropdown-menu">
@@ -105,7 +106,7 @@ class LanguageChoice extends React.Component {
                         <button
                           href={'#' + languageCode + '_language_panel'}
                           className="dropdown-item"
-                          data-toggle="tab"
+                          data-bs-toggle="tab"
                           languageCode={languageCode}
                           onClick={this.addLanguage.bind(this)}
                           key={languageCode}
@@ -120,7 +121,7 @@ class LanguageChoice extends React.Component {
 
           {this.state.activeLanguages.length > 1 &&
             <div className="dropdown">
-              <button className="dropdown-toggle btn btn--light btn--small" type="button" data-toggle="dropdown">
+              <button className="dropdown-toggle btn btn--light btn--small" type="button" data-bs-toggle="dropdown">
                 <i className="fa fa-minus" />
               </button>
               <div className="dropdown-menu">
@@ -132,7 +133,7 @@ class LanguageChoice extends React.Component {
                           <button
                             href={languageCode === this.state.activeTab ? '#' + this.getNewActiveTab(languageCode) + '_language_panel' : ''}
                             className="dropdown-item"
-                            data-toggle="tab"
+                            data-bs-toggle="tab"
                             languageCode={languageCode}
                             onClick={this.removeLanguage.bind(this)}
                             key={languageCode}

@@ -1,8 +1,8 @@
 import pytest
 from django.urls import reverse
 
+from adhocracy4.test.helpers import freeze_phase
 from apps.debate import phases
-from tests.helpers import freeze_phase
 
 
 @pytest.mark.django_db
@@ -51,7 +51,7 @@ def test_initiator_can_export_subjects(client, phase_factory):
                 'organisation_slug': module.project.organisation.slug,
                 'module_slug': module.slug
             })
-        assert response.context['export'] == export_url
+        assert response.context['subject_export'] == export_url
         response = client.get(export_url)
         assert response.status_code == 200
         assert 'application/vnd.openxmlformats-officedocument.'\

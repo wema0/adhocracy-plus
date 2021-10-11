@@ -27,6 +27,10 @@
     margin-bottom: ($spacer * 2);
 }
 
+.u-spacer-bottom-4 {
+    margin-bottom: ($spacer * 4);
+}
+
 .u-list-reset {
     list-style: none;
     margin: 0;
@@ -104,8 +108,8 @@
     height: 0.5em;
 }
 
-.u-z-index--1 {
-    z-index: 1;
+.u-z-index--0 {
+    z-index: 0;
 }
 
 .u-no-underline {
@@ -139,4 +143,10 @@
 
 .u-border {
     border: 1px solid $border-color;
+}
+
+// Utility classes from a4
+
+.a4-muted {
+    color: $text-muted;
 }

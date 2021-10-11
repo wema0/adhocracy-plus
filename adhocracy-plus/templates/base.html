@@ -54,7 +54,7 @@
 </head>
 <body>
     {% wagtailuserbar %}
-        <a href="#main" class="sr-only sr-only-focusable">{% trans "Skip to content "%}</a>
+        <a href="#main" class="visually-hidden-focusable">{% trans "Skip to content "%}</a>
 
         {% block header %}
         {% include 'header.html' %}
@@ -63,7 +63,8 @@
         <main id="main" class="flex-fill">
             {% if messages %}
             <div class="row">
-                <ul class="messages mb-3">
+              <div class="col">
+                <ul class="messages">
                     {% for message in messages %}
                     <li class="alert alert--{{ message.tags }}">
                         <div class="container">
@@ -72,6 +73,7 @@
                     </li>
                     {% endfor %}
                 </ul>
+              </div>
             </div>
             {% endif %}
 

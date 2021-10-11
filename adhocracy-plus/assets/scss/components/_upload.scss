@@ -1,6 +1,8 @@
 .upload-wrapper {
     position: relative;
     justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
 
     // in front of text input, but invisible
     .form-control-file {
@@ -15,10 +17,10 @@
         border-color: $brand-secondary;
     }
 
-    .far,
-    .fas {
-        line-height: 1.3;
-    }
+    // .far,
+    // .fas {
+    //     line-height: 1.1;
+    // }
 }
 
 .upload-wrapper__fields,
@@ -37,17 +39,15 @@
 .upload-wrapper__action {
     z-index: 1;
     min-height: 43px;
+    border-width: 1px;
+    line-height: 1.4;
 }
 
 .clear-image {
-    @include sr-only;
+    @include visually-hidden;
 }
 
 .clear-image:checked + img {
     opacity: 0.2;
     filter: grayscale(100%);
-}
-
-.upload-wrapper__alert {
-    max-width: 100%;
 }

@@ -102,6 +102,34 @@
     &:disabled,
     &.is-disabled {
         border-color: $border-color;
+        box-shadow: none;
+    }
+}
+
+.btn--none {
+    @include button-color(transparent, transparent);
+    border: none;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &:disabled,
+    &.is-disabled {
+        box-shadow: none;
+    }
+}
+
+// from a4 comments
+.btn--no-border {
+    @extend .btn--transparent;
+    border: none;
+
+    &:focus,
+    &:hover,
+    &:active,
+    &:disabled,
+    &.is-disabled {
+        background-color: $gray-lightest;
     }
 }
 
@@ -110,7 +138,7 @@
 }
 
 .btn--secondary {
-    @include button-color--product($brand-info);
+    @include button-color--product($brand-info); // this should be secondary
 }
 
 .btn--primary-filled {
@@ -168,6 +196,7 @@
         color: $link-hover-color;
         border-color: transparent;
         background-color: transparent;
+        box-shadow: none;
     }
 
     &.is-disabled,
@@ -197,22 +226,13 @@
     }
 }
 
-.btn--none {
-    @include button-color(transparent, transparent);
-    border: none;
+.btn--close {
+    @extend .btn-close;
+    margin-bottom: auto;
 }
 
-.btn--no-border {
-    @extend .btn--transparent;
-    border: none;
-
-    &:focus,
-    &:hover,
-    &:active,
-    &:disabled,
-    &.is-disabled {
-        background-color: $gray-lightest;
-    }
+.modal--close {
+    text-align: right;
 }
 
 .btn--select {
@@ -333,6 +353,6 @@
     }
 }
 
-.input-group-append {
-    margin-left: -2px;
-}
+// .input-group-append {
+//     margin-left: -2px;
+// }
